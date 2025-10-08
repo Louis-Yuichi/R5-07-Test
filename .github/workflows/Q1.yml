@@ -1,7 +1,10 @@
-name: Q1 - Copier README.md vers. Q1_archive_README.md
+name: Q1 - Copier README.md vers Q1_archive_README.md
 run-name: ${{ github.actor }} is testing out GitHub Actions
 
 on: [push]
+
+permissions:
+  contents: write
 
 jobs:
   copy-and-push:
