@@ -30,6 +30,6 @@ jobs:
 
       - name: Commit et push du fichier archivé
         run: |
-          git add Q2_archive_README.md
-          git commit -m "Archive Q3.java - Q3 workflow execution par Louis Thomazeau-Agullo" || exit 0
+          git add Q3_archive_java.txt
+          git commit -m "Archive Q3.java - Q3 workflow execution par Louis Thomazeau-Agullo"
           git push

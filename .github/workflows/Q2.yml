@@ -31,5 +31,5 @@ jobs:
       - name: Commit et push du fichier archivé
         run: |
           git add Q2_archive_README.md
-          git commit -m "Archive README.md - Q2 workflow execution par Louis Thomazeau-Agullo"
+          git commit -m "Archive README.md - Q2 workflow execution par Louis"
           git push
