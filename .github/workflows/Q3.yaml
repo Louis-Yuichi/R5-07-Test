@@ -1,0 +1,35 @@
+name: Q3 - Archive Java file
+run-name: ${{ github.actor }} is testing out GitHub Actions
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  copy-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Créer Q3_archive_java.txt
+        run: |
+          echo "# Archive Java - Q3" > Q3_archive_java.txt
+          echo "**Nom :** Thomazeau-Agullo" >> Q3_archive_java.txt
+          echo "**Prénom :** Louis" >> Q3_archive_java.txt
+          echo "**Date et heure d'exécution :** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q3_archive_java.txt
+          echo "## Contenu du fichier Q3.java :" >> Q3_archive_java.txt
+          cat Q3.java >> Q3_archive_java.txt
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name Louis
+          git config --global user.email louisagullo.05@gmail.com
+
+      - name: Commit et push du fichier archivé
+        run: |
+          git add Q2_archive_README.md
+          git commit -m "Archive Q3.java - Q3 workflow execution par Louis Thomazeau-Agullo" || exit 0
+          git push
