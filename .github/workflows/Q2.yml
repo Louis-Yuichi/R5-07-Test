@@ -17,16 +17,10 @@ jobs:
       - name: Créer Q2_archive_README.md avec informations complètes
         run: |
           echo "# Archive README - Q2" > Q2_archive_README.md
-          echo "" >> Q2_archive_README.md
           echo "**Nom :** Thomazeau-Agullo" >> Q2_archive_README.md
           echo "**Prénom :** Louis" >> Q2_archive_README.md
-          echo "" >> Q2_archive_README.md
           echo "**Date et heure d'exécution :** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q2_archive_README.md
-          echo "" >> Q2_archive_README.md
-          echo "---" >> Q2_archive_README.md
-          echo "" >> Q2_archive_README.md
           echo "## Contenu du fichier README.md original :" >> Q2_archive_README.md
-          echo "" >> Q2_archive_README.md
           cat README.md >> Q2_archive_README.md
 
       - name: Configurer Git
