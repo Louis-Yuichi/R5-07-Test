@@ -1,0 +1,17 @@
+# Archive Java - Q3
+**Nom :** Thomazeau-Agullo
+**Prénom :** Louis
+**Date et heure d'exécution :** 2025-10-08 13:21:27 UTC
+## Contenu du fichier Q3.java :
+public class Q3
+{
+    public static void main(String[] args)
+    {
+        int nbEtoiles = Integer.parseInt(args[0]);
+
+        for (int cpt = 0; cpt < nbEtoiles; cpt++)
+        {
+            System.out.print("*");
+        }
+    }
+}
