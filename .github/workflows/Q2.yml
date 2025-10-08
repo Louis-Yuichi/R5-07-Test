@@ -31,7 +31,7 @@ jobs:
 
       - name: Configurer Git
         run: |
-          git config --global user.name "Louis Thomazeau-Agullo"
+          git config --global user.name Louis
           git config --global user.email louisagullo.05@gmail.com
 
       - name: Commit et push du fichier archivé
