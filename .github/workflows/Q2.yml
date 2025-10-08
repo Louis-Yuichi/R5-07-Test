@@ -1,0 +1,41 @@
+name: Q2 - Copier README.md vers Q2_archive_README.md
+run-name: ${{ github.actor }} is testing out GitHub Actions
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  copy-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Créer Q2_archive_README.md avec informations complètes
+        run: |
+          echo "# Archive README - Q2" > Q2_archive_README.md
+          echo "" >> Q2_archive_README.md
+          echo "**Nom :** Thomazeau-Agullo" >> Q2_archive_README.md
+          echo "**Prénom :** Louis" >> Q2_archive_README.md
+          echo "" >> Q2_archive_README.md
+          echo "**Date et heure d'exécution :** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> Q2_archive_README.md
+          echo "" >> Q2_archive_README.md
+          echo "---" >> Q2_archive_README.md
+          echo "" >> Q2_archive_README.md
+          echo "## Contenu du fichier README.md original :" >> Q2_archive_README.md
+          echo "" >> Q2_archive_README.md
+          cat README.md >> Q2_archive_README.md
+
+      - name: Configurer Git
+        run: |
+          git config --global user.name "Louis Thomazeau-Agullo"
+          git config --global user.email louisagullo.05@gmail.com
+
+      - name: Commit et push du fichier archivé
+        run: |
+          git add Q2_archive_README.md
+          git commit -m "Archive README.md - Q2 workflow execution par Louis Thomazeau-Agullo"
+          git push
